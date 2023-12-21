@@ -16,6 +16,10 @@
 		7E143FD72B33B54200D4C95A /* iFoodCaseMovieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FD62B33B54200D4C95A /* iFoodCaseMovieUITestsLaunchTests.swift */; };
 		7E143FE82B33B69A00D4C95A /* NetworkRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FE72B33B69A00D4C95A /* NetworkRequestError.swift */; };
 		7E143FEA2B33B75F00D4C95A /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FE92B33B75F00D4C95A /* NetworkRequest.swift */; };
+		7E143FEC2B33BB2F00D4C95A /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FEB2B33BB2F00D4C95A /* NetworkManagerProtocol.swift */; };
+		7E143FEE2B33BC7E00D4C95A /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FED2B33BC7E00D4C95A /* NetworkManagerError.swift */; };
+		7E143FF02B33BF3B00D4C95A /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FEF2B33BF3B00D4C95A /* NetworkManagerMock.swift */; };
+		7E143FF32B33C2F900D4C95A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FF22B33C2F900D4C95A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		7E143FD62B33B54200D4C95A /* iFoodCaseMovieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFoodCaseMovieUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7E143FE72B33B69A00D4C95A /* NetworkRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestError.swift; sourceTree = "<group>"; };
 		7E143FE92B33B75F00D4C95A /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		7E143FEB2B33BB2F00D4C95A /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		7E143FED2B33BC7E00D4C95A /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
+		7E143FEF2B33BF3B00D4C95A /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
+		7E143FF22B33C2F900D4C95A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +155,7 @@
 		7E143FE42B33B60000D4C95A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7E143FEF2B33BF3B00D4C95A /* NetworkManagerMock.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -154,7 +163,9 @@
 		7E143FE52B33B63D00D4C95A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7E143FF12B33C2E700D4C95A /* Helper */,
 				7E143FE92B33B75F00D4C95A /* NetworkRequest.swift */,
+				7E143FEB2B33BB2F00D4C95A /* NetworkManagerProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -163,8 +174,17 @@
 			isa = PBXGroup;
 			children = (
 				7E143FE72B33B69A00D4C95A /* NetworkRequestError.swift */,
+				7E143FED2B33BC7E00D4C95A /* NetworkManagerError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		7E143FF12B33C2E700D4C95A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7E143FF22B33C2F900D4C95A /* Constants.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,8 +318,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E143FBB2B33B53F00D4C95A /* ContentView.swift in Sources */,
+				7E143FEE2B33BC7E00D4C95A /* NetworkManagerError.swift in Sources */,
 				7E143FB92B33B53F00D4C95A /* iFoodCaseMovieApp.swift in Sources */,
 				7E143FEA2B33B75F00D4C95A /* NetworkRequest.swift in Sources */,
+				7E143FF32B33C2F900D4C95A /* Constants.swift in Sources */,
+				7E143FEC2B33BB2F00D4C95A /* NetworkManagerProtocol.swift in Sources */,
 				7E143FE82B33B69A00D4C95A /* NetworkRequestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E143FF02B33BF3B00D4C95A /* NetworkManagerMock.swift in Sources */,
 				7E143FCB2B33B54200D4C95A /* iFoodCaseMovieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
