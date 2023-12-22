@@ -1,13 +1,13 @@
 //
-//  iFoodCaseMovieTests.swift
+//  PopularViewModelTest.swift
 //  iFoodCaseMovieTests
 //
-//  Created by Samuel on 20/12/23.
+//  Created by Samuel on 21/12/23.
 //
 
 import XCTest
 
-final class iFoodCaseMovieTests: XCTestCase {
+final class PopularViewModelTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -27,7 +27,7 @@ final class iFoodCaseMovieTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
