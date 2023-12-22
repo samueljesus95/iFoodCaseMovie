@@ -11,7 +11,7 @@ import SwiftUI
 struct iFoodCaseMovieApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PopularView()
         }
     }
 }
