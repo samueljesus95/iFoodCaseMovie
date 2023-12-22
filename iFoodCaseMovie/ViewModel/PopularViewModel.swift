@@ -23,7 +23,7 @@ class PopularViewModel: ObservableObject {
     
     //MARK: - private variables
     @Published
-    private(set) var popularList: [Popular] = []
+    private(set) var popularList: [Movie] = []
     
     //MARK: - public variables
     var popularItens: [CellItem] {

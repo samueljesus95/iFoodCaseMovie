@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct PopularResult: Codable {
+struct MovieResult: Codable {
     let page: Int
     let total_results: Int
     let total_pages: Int
-    let results: [Popular]
+    let results: [Movie]
 }
 
-struct Popular: Codable, Hashable {
+struct Movie: Codable, Hashable {
     let id: Int
     let poster_path: String?
     let adult: Bool?

@@ -9,7 +9,7 @@ import Foundation
 @testable import iFoodCaseMovie
 
 struct PopularMock {
-    static let popularFirst = Popular(
+    static let popularFirst = Movie(
         id: 76600,
         poster_path: "/5ScPNT6fHtfYJeWBajZciPV3hEL.jpg",
         adult: false,
@@ -27,7 +27,7 @@ struct PopularMock {
         total_results: nil
     )
 
-    static let popularSecond = Popular(
+    static let popularSecond = Movie(
         id: 436270,
         poster_path: "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
         adult: false,
@@ -45,13 +45,13 @@ struct PopularMock {
         total_results: nil
     )
 
-    static let popularWithOneMovie = PopularResult(
+    static let popularWithOneMovie = MovieResult(
         page: 1,
         total_results: 1,
         total_pages: 1,
         results: [popularFirst])
 
-    static let popularWithTwoMovie = PopularResult(
+    static let popularWithTwoMovie = MovieResult(
         page: 1,
         total_results: 1,
         total_pages: 1,

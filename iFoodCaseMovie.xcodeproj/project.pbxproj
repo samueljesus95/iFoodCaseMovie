@@ -18,7 +18,7 @@
 		7E143FEE2B33BC7E00D4C95A /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FED2B33BC7E00D4C95A /* NetworkManagerError.swift */; };
 		7E143FF02B33BF3B00D4C95A /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FEF2B33BF3B00D4C95A /* NetworkManagerMock.swift */; };
 		7E143FF32B33C2F900D4C95A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FF22B33C2F900D4C95A /* Constants.swift */; };
-		7E143FF62B33C3A000D4C95A /* Popular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FF52B33C3A000D4C95A /* Popular.swift */; };
+		7E143FF62B33C3A000D4C95A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FF52B33C3A000D4C95A /* Movie.swift */; };
 		7E143FF92B33C47900D4C95A /* PopularViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FF82B33C47900D4C95A /* PopularViewModel.swift */; };
 		7E143FFE2B33C5F100D4C95A /* PopularService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FFD2B33C5F100D4C95A /* PopularService.swift */; };
 		7E1440002B33C7D200D4C95A /* MovieType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E143FFF2B33C7D200D4C95A /* MovieType.swift */; };
@@ -62,7 +62,7 @@
 		7E143FED2B33BC7E00D4C95A /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
 		7E143FEF2B33BF3B00D4C95A /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		7E143FF22B33C2F900D4C95A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		7E143FF52B33C3A000D4C95A /* Popular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular.swift; sourceTree = "<group>"; };
+		7E143FF52B33C3A000D4C95A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7E143FF82B33C47900D4C95A /* PopularViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewModel.swift; sourceTree = "<group>"; };
 		7E143FFD2B33C5F100D4C95A /* PopularService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularService.swift; sourceTree = "<group>"; };
 		7E143FFF2B33C7D200D4C95A /* MovieType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieType.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 		7E143FF42B33C38800D4C95A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7E143FF52B33C3A000D4C95A /* Popular.swift */,
+				7E143FF52B33C3A000D4C95A /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -414,7 +414,7 @@
 				7E143FEE2B33BC7E00D4C95A /* NetworkManagerError.swift in Sources */,
 				7E143FFE2B33C5F100D4C95A /* PopularService.swift in Sources */,
 				7E143FB92B33B53F00D4C95A /* iFoodCaseMovieApp.swift in Sources */,
-				7E143FF62B33C3A000D4C95A /* Popular.swift in Sources */,
+				7E143FF62B33C3A000D4C95A /* Movie.swift in Sources */,
 				7E1440002B33C7D200D4C95A /* MovieType.swift in Sources */,
 				7E143FEA2B33B75F00D4C95A /* NetworkRequest.swift in Sources */,
 				7E143FF32B33C2F900D4C95A /* Constants.swift in Sources */,
@@ -604,7 +604,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samueljesus95.iFoodCaseMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -640,7 +641,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samueljesus95.iFoodCaseMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -661,7 +663,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samueljesus95.iFoodCaseMovieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -683,7 +686,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samueljesus95.iFoodCaseMovieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -704,7 +708,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samueljesus95.iFoodCaseMovieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -725,7 +730,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samueljesus95.iFoodCaseMovieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

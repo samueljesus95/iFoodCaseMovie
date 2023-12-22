@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PopularServiceProtocol {
-    func loadData(completion: @escaping (Result<[Popular], Error>) -> Void)
+    func loadData(completion: @escaping (Result<[Movie], Error>) -> Void)
 }
 
 class PopularService: PopularServiceProtocol {
@@ -22,7 +22,7 @@ class PopularService: PopularServiceProtocol {
     }
     
     //MARK: - public methods
-    func loadData(completion: @escaping (Result<[Popular], Error>) -> Void) {
+    func loadData(completion: @escaping (Result<[Movie], Error>) -> Void) {
         let request = NetworkRequest(
             baseURL: Constants.baseUrl,
             path: MovieType.popular.path,
@@ -31,7 +31,7 @@ class PopularService: PopularServiceProtocol {
             queryParameters: ["api_key" : Constants.apiKey],
             bodyParameter: nil)
         
-        networkManager.request(request) { (_ result: Result<PopularResult, Error>) in
+        networkManager.request(request) { (_ result: Result<MovieResult, Error>) in
             switch result {
             case .success(let popular):
                 completion(.success(popular.results))
