@@ -8,12 +8,12 @@
 import Foundation
 @testable import iFoodCaseMovie
 
-class PopularServiceMock: PopularServiceProtocol {
+class MovieServiceMock: MovieServiceProtocol {
     var didCallLoadData = false
     var isSuccess = false
-    var mockResult: [Movie] = PopularMock.popularWithOneMovie.results
+    var mockResult: [Movie] = MovieMock.popularWithOneMovie.results
     
-    func loadData(completion: @escaping (Result<[iFoodCaseMovie.Movie], Error>) -> Void) {
+    func loadData(from endPoint: MovieType,completion: @escaping (Result<[iFoodCaseMovie.Movie], Error>) -> Void) {
         didCallLoadData = true
         isSuccess ? completion(.success(mockResult)) : completion(.failure(iFoodCaseMovie.NetworkManagerError.connectionFailedWithAPI))
     }

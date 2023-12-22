@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol PopularServiceProtocol {
-    func loadData(completion: @escaping (Result<[Movie], Error>) -> Void)
+protocol MovieServiceProtocol {
+    func loadData(from enPoint: MovieType, completion: @escaping (Result<[Movie], Error>) -> Void)
 }
 
-class PopularService: PopularServiceProtocol {
+class MovieService: MovieServiceProtocol {
     
     //MARK: - private variables
     private let networkManager: NetworkManagerProtocol
@@ -22,10 +22,10 @@ class PopularService: PopularServiceProtocol {
     }
     
     //MARK: - public methods
-    func loadData(completion: @escaping (Result<[Movie], Error>) -> Void) {
+    func loadData(from endPoint: MovieType, completion: @escaping (Result<[Movie], Error>) -> Void) {
         let request = NetworkRequest(
             baseURL: Constants.baseUrl,
-            path: MovieType.popular.path,
+            path: endPoint.path,
             method: .get,
             headers: ["Content-Type" : "application/json"],
             queryParameters: ["api_key" : Constants.apiKey],

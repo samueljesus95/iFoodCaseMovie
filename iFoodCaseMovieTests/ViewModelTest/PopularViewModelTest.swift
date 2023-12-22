@@ -11,10 +11,10 @@ import XCTest
 final class PopularViewModelTest: XCTestCase {
     
     var sut: PopularViewModel!
-    var popularServiceMock: PopularServiceMock!
+    var popularServiceMock: MovieServiceMock!
 
     override func setUpWithError() throws {
-        popularServiceMock = PopularServiceMock()
+        popularServiceMock = MovieServiceMock()
         sut = PopularViewModel(popularServiceProtocol: popularServiceMock)
     }
 
@@ -36,7 +36,7 @@ final class PopularViewModelTest: XCTestCase {
     
     func testShouldLoadDataWithTwoMovies() {
         popularServiceMock.isSuccess = true
-        popularServiceMock.mockResult = PopularMock.popularWithTwoMovie.results
+        popularServiceMock.mockResult = MovieMock.popularWithTwoMovie.results
         sut.fetch()
         XCTAssertEqual(sut.popularItens.count, 2)
     }

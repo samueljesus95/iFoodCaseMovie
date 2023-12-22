@@ -8,13 +8,13 @@
 import XCTest
 @testable import iFoodCaseMovie
 
-final class PopularServiceTest: XCTest {
-    var sut: PopularService!
+final class MovieServiceTest: XCTest {
+    var sut: MovieService!
     var netwotkMock: NetworkManagerMock!
     
     override func setUpWithError() throws {
         netwotkMock = NetworkManagerMock()
-        sut = PopularService(networkManager: netwotkMock)
+        sut = MovieService(networkManager: netwotkMock)
     }
     
     override func tearDownWithError() throws {
@@ -22,7 +22,7 @@ final class PopularServiceTest: XCTest {
         sut = nil
     }
     
-    func testShouldLoadDataWithValidResquestValues() throws {
+    func testShouldLoadPopularDataWithValidResquestValues() throws {
         let requestExpected = NetworkRequest(
             baseURL: Constants.baseUrl,
             path: MovieType.popular.path,
@@ -31,7 +31,7 @@ final class PopularServiceTest: XCTest {
             queryParameters: nil,
             bodyParameter: nil)
         
-        sut.loadData { _ in }
+        sut.loadData(from: MovieType.popular) { _ in }
         
         XCTAssertTrue(netwotkMock.didCallRequest)
         XCTAssertEqual(requestExpected.baseURL, netwotkMock.requestReceived?.baseURL)

@@ -8,7 +8,7 @@
 import Foundation
 @testable import iFoodCaseMovie
 
-struct PopularMock {
+struct MovieMock {
     static let popularFirst = Movie(
         id: 76600,
         poster_path: "/5ScPNT6fHtfYJeWBajZciPV3hEL.jpg",

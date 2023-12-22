@@ -33,16 +33,16 @@ class PopularViewModel: ObservableObject {
         }
     }
     
-    let popularServiceProtocol: PopularServiceProtocol
+    let popularServiceProtocol: MovieServiceProtocol
     
     //MARK: - init class
-    init(popularServiceProtocol: PopularServiceProtocol = PopularService()) {
+    init(popularServiceProtocol: MovieServiceProtocol = MovieService()) {
         self.popularServiceProtocol = popularServiceProtocol
     }
     
     //MARK: - public methods
     func fetch() {
-        popularServiceProtocol.loadData { [weak self] result in
+        popularServiceProtocol.loadData(from: MovieType.popular) { [weak self] result in
             switch result {
             case .success(let popularResult):
                 self?.popularList = popularResult
