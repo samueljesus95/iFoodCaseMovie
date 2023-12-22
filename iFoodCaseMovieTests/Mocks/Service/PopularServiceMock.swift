@@ -15,6 +15,6 @@ class PopularServiceMock: PopularServiceProtocol {
     
     func loadData(completion: @escaping (Result<[iFoodCaseMovie.Popular], Error>) -> Void) {
         didCallLoadData = true
-        isSuccess ? completion(.success(mockResult)) : completion(.failure(Error.self as! Error))
+        isSuccess ? completion(.success(mockResult)) : completion(.failure(iFoodCaseMovie.NetworkManagerError.connectionFailedWithAPI))
     }
 }
