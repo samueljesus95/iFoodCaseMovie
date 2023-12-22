@@ -40,4 +40,9 @@ final class PopularViewModelTest: XCTestCase {
         sut.fetch()
         XCTAssertEqual(sut.popularItens.count, 2)
     }
+    
+    func testShouldLoadDataWithFailure() {
+        sut.fetch()
+        XCTAssertEqual(sut.popularItens.count, 0)
+    }
 }
