@@ -36,7 +36,7 @@ final class PopularViewModelTest: XCTestCase {
     
     func testShouldLoadDataWithTwoMovies() {
         popularServiceMock.isSuccess = true
-        popularServiceMock.mockResult = MovieMock.popularWithTwoMovie.results
+        popularServiceMock.mockResult = MovieMock.movieWithTwoResult.results
         sut.fetch()
         XCTAssertEqual(sut.popularItens.count, 2)
     }

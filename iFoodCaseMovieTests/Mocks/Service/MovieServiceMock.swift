@@ -11,7 +11,7 @@ import Foundation
 class MovieServiceMock: MovieServiceProtocol {
     var didCallLoadData = false
     var isSuccess = false
-    var mockResult: [Movie] = MovieMock.popularWithOneMovie.results
+    var mockResult: [Movie] = MovieMock.movieWithOneResult.results
     
     func loadData(from endPoint: MovieType,completion: @escaping (Result<[iFoodCaseMovie.Movie], Error>) -> Void) {
         didCallLoadData = true
