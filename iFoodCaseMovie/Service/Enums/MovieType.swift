@@ -17,8 +17,8 @@ enum MovieType {
         switch self {
         case .popular: return "/popular"
         case .nowPlaying: return "/now_playing"
-        case .upComing: return "upcoming"
-        case .topRated: return "top_rated"
+        case .upComing: return "/upcoming"
+        case .topRated: return "/top_rated"
         }
     }
     
