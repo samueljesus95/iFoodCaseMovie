@@ -13,19 +13,19 @@ struct PopularView: View {
     var popularViewModel = PopularViewModel()
     
     var body: some View {
-        VStack {
-            Text("Popular")
-                .padding()
-            Spacer()
-            List {
-                ForEach(popularViewModel.popularItens, id: \.title) { cellItem in
-                    Text(cellItem.title)
-                        .padding()
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(popularViewModel.popularItens, id: \.title) { cellItem in
+                        Text(cellItem.title)
+                            .padding()
+                    }
                 }
             }
-        }
-        .onAppear() {
-            popularViewModel.fetch()
+            .onAppear() {
+                popularViewModel.fetch()
+            }
+            .navigationTitle("Popular")
         }
     }
 }

@@ -12,7 +12,7 @@ protocol PopularViewModelDelegate: AnyObject {
     func presentPopularMovieDetail()
 }
 
-struct CellItem: Hashable {
+struct PopularCellItem: Hashable {
     let title: String
 }
 
@@ -26,10 +26,10 @@ class PopularViewModel: ObservableObject {
     private(set) var popularList: [Movie] = []
     
     //MARK: - public variables
-    var popularItens: [CellItem] {
+    var popularItens: [PopularCellItem] {
         popularList.compactMap { popularMovie in
             guard let title = popularMovie.title else { return nil }
-            return CellItem(title: title)
+            return PopularCellItem(title: title)
         }
     }
     
@@ -53,7 +53,7 @@ class PopularViewModel: ObservableObject {
         }
     }
     
-    func cellItem(for indexPath: IndexPath) -> CellItem {
+    func cellItem(for indexPath: IndexPath) -> PopularCellItem {
         return popularItens[indexPath.item]
     }
     
