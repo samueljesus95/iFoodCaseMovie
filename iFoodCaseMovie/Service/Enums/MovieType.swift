@@ -12,6 +12,7 @@ enum MovieType {
     case nowPlaying
     case upComing
     case topRated
+    case movieId
     
     var path: String {
         switch self {
@@ -19,6 +20,7 @@ enum MovieType {
         case .nowPlaying: return "/now_playing"
         case .upComing: return "/upcoming"
         case .topRated: return "/top_rated"
+        case .movieId: return "/movie_id"
         }
     }
     
@@ -28,6 +30,7 @@ enum MovieType {
         case .nowPlaying: return "Now Playing"
         case .upComing: return "Upcoming"
         case .topRated: return "Top Rated"
+        case .movieId: return "Movie Id"
         }
     }
 }
