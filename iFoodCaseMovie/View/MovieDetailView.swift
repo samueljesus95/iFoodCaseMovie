@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct MovieDetailView: View {
+    
+    @StateObject
+    var movieDetailViewModel = MovieDetailViewModel()
+    
+    let movieId: Int
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(movieDetailViewModel.movieDetail?.title ?? "n/a")
+        }
+        .onAppear() {
+            movieDetailViewModel.fetch(movieId)
+        }
     }
 }
 
 #Preview {
-    MovieDetailView()
+    MovieDetailView(movieId: MovieStub.movieResult.id ?? 0)
 }
