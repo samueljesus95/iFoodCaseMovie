@@ -16,9 +16,11 @@ struct PopularView: View {
         NavigationStack {
             VStack {
                 List {
-                    ForEach(popularViewModel.popularItens, id: \.title) { cellItem in
-                        Text(cellItem.title)
-                            .padding()
+                    ForEach(popularViewModel.popularItens, id: \.id) { cellItem in
+                        NavigationLink(destination: MovieDetailView(movieId: cellItem.id)) {
+                            Text(cellItem.title)
+                                .padding()
+                        }
                     }
                 }
             }
