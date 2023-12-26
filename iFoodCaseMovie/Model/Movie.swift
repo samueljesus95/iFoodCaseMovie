@@ -15,7 +15,7 @@ struct MovieResult: Codable {
 }
 
 struct Movie: Codable, Hashable {
-    let id: Int
+    let id: Int?
     let poster_path: String?
     let adult: Bool?
     let overview: String?
