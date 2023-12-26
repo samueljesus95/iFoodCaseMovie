@@ -9,7 +9,6 @@ import Foundation
 
 protocol NowPlayingViewModelDelegate: AnyObject {
     func didUpdateNowPlayingMovies()
-    func presentNowPlayingMovieDetail()
 }
 
 struct NowPlayingCellItem: Hashable {
@@ -54,10 +53,6 @@ class NowPlayingViewModel: ObservableObject {
     }
     
     func cellItem(for indexPath: IndexPath) -> NowPlayingCellItem {
-        return nowPlayingItens[indexPath.item]
-    }
-    
-    func didSelectItem(at indexPath: IndexPath) {
-        delegate?.presentNowPlayingMovieDetail()
+        return nowPlayingItens[indexPath.row]
     }
 }

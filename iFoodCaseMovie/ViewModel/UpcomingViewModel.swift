@@ -9,7 +9,6 @@ import Foundation
 
 protocol UpcomingViewModelDelegate: AnyObject {
     func didUpdateUpcomingMovies()
-    func presentUpcomingMovieDetail()
 }
 
 struct UpcomingCellItem: Hashable {
@@ -54,10 +53,6 @@ class UpcomingViewModel: ObservableObject {
     }
     
     func cellItem(for indexPath: IndexPath) -> UpcomingCellItem {
-        return upcomingItens[indexPath.item]
-    }
-    
-    func didSelectItem(at indexPath: IndexPath) {
-        delegate?.presentUpcomingMovieDetail()
+        return upcomingItens[indexPath.row]
     }
 }

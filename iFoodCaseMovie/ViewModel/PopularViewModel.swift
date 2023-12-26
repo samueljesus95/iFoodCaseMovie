@@ -9,10 +9,10 @@ import Foundation
 
 protocol PopularViewModelDelegate: AnyObject {
     func didUpdatePopularMovies()
-    func presentPopularMovieDetail()
 }
 
 struct PopularCellItem: Hashable {
+    let id: Int
     let title: String
 }
 
@@ -28,8 +28,8 @@ class PopularViewModel: ObservableObject {
     //MARK: - public variables
     var popularItens: [PopularCellItem] {
         popularList.compactMap { popularMovie in
-            guard let title = popularMovie.title else { return nil }
-            return PopularCellItem(title: title)
+            guard let id = popularMovie.id, let title = popularMovie.title else { return nil }
+            return PopularCellItem(id: id, title: title)
         }
     }
     
@@ -54,10 +54,6 @@ class PopularViewModel: ObservableObject {
     }
     
     func cellItem(for indexPath: IndexPath) -> PopularCellItem {
-        return popularItens[indexPath.item]
-    }
-    
-    func didSelectItem(at indexPath: IndexPath) {
-        delegate?.presentPopularMovieDetail()
+        return popularItens[indexPath.row]
     }
 }

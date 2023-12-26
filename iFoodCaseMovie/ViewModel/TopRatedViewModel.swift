@@ -9,7 +9,6 @@ import Foundation
 
 protocol TopRatedViewModelDelegate: AnyObject {
     func didUpdateTopRatedMovies()
-    func presentTopRatedMovieDetail()
 }
 
 struct TopRatedCellItem: Hashable {
@@ -54,10 +53,6 @@ class TopRatedViewModel: ObservableObject {
     }
     
     func cellItem(for indexPath: IndexPath) -> TopRatedCellItem {
-        return topRatedItens[indexPath.item]
-    }
-    
-    func didSelectItem(at indexPath: IndexPath) {
-        delegate?.presentTopRatedMovieDetail()
+        return topRatedItens[indexPath.row]
     }
 }
