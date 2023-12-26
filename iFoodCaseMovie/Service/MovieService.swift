@@ -9,6 +9,7 @@ import Foundation
 
 protocol MovieServiceProtocol {
     func loadData(from enPoint: MovieType, completion: @escaping (Result<[Movie], Error>) -> Void)
+    func loadData(id movieId: Int, from enPoint: MovieType, completion: @escaping (Result<Movie, Error>) -> Void)
 }
 
 class MovieService: MovieServiceProtocol {
@@ -35,6 +36,25 @@ class MovieService: MovieServiceProtocol {
             switch result {
             case .success(let popular):
                 completion(.success(popular.results))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func loadData(id movieId: Int, from endPoint: MovieType, completion: @escaping (Result<Movie, Error>) -> Void) {
+        let request = NetworkRequest(
+            baseURL: Constants.baseUrl,
+            path: endPoint.path,
+            method: .get,
+            headers: ["Content-Type" : "application/json"],
+            queryParameters: ["api_key" : Constants.apiKey, "movie_id" : String(movieId), "language" : "en-US"],
+            bodyParameter: nil)
+        
+        networkManager.request(request) { (_ result: Result<Movie, Error>) in
+            switch result {
+            case .success(let movie):
+                completion(.success(movie))
             case .failure(let error):
                 completion(.failure(error))
             }
